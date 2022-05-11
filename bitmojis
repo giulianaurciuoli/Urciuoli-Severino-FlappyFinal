@@ -1,0 +1,58 @@
+var bitmojiHead= function (bitmojiX,bitmojiY,bitmojiHeight){
+    noStroke();
+    fill(176, 108, 73);//skintone
+    ellipse(bitmojiX+(bitmojiHeight/150),bitmojiY+bitmojiHeight/150,bitmojiHeight/150*83    ,bitmojiHeight/150*100);//head
+
+    fill(3, 3, 3);
+    arc(bitmojiX+(bitmojiHeight/150),bitmojiY-(bitmojiHeight/150*20),bitmojiHeight/150*82,bitmojiHeight/150*57,179,364);//hair
+    rect(bitmojiX-(bitmojiHeight/150*40),bitmojiY-(bitmojiHeight/150*23),bitmojiHeight/150*21,bitmojiHeight/150*13);//hairline (left box)
+    rect(bitmojiX+(bitmojiHeight/150*22),bitmojiY-(bitmojiHeight/150*22),bitmojiHeight/150*19,bitmojiHeight/150*13);//hairline (right box)
+   
+
+    fill(255, 255, 255);
+    arc(bitmojiX+(bitmojiHeight/150*42),bitmojiY+(bitmojiHeight/150*37),bitmojiHeight/150*28    ,bitmojiHeight/150*55,bitmojiHeight/150,bitmojiHeight/150*361);//right chisel
+    arc(bitmojiX-(bitmojiHeight/150*42),bitmojiY+(bitmojiHeight/150*37),bitmojiHeight/150*28     ,bitmojiHeight/150*55,bitmojiHeight/150,bitmojiHeight/150*361);//left chisel
+
+ellipse(bitmojiX-(bitmojiHeight/150*20),bitmojiY+(bitmojiHeight/150),bitmojiHeight/150*20,bitmojiHeight/150*10);//white surrounding pupil
+ellipse(bitmojiX+(bitmojiHeight/150*19),bitmojiY+(bitmojiHeight/150),bitmojiHeight/150*20,bitmojiHeight/150*10);//white surrounding pupil
+
+};
+
+var bitmojiFace= function(bitmojiX,bitmojiY,bitmojiHeight){
+
+    fill(155,23,23);
+ellipse(bitmojiX+(bitmojiHeight/150*20),bitmojiY+(bitmojiHeight/150),bitmojiHeight/150*5,bitmojiHeight/150*4);//left pupil
+ellipse(bitmojiX-(bitmojiHeight/150*17),bitmojiY+(bitmojiHeight/150),bitmojiHeight/150*5,bitmojiHeight/150*4);//right pupil
+
+stroke(0, 0, 0);
+fill(176,108,73);//fill for nose
+bezier(bitmojiX+bitmojiHeight/150,bitmojiY+bitmojiHeight/150,bitmojiX+(bitmojiHeight/150*21),bitmojiY+(bitmojiHeight/150*22),bitmojiX-(bitmojiHeight/150*8),bitmojiY+(bitmojiHeight/150*20),bitmojiX-(bitmojiHeight/150*4),bitmojiY+(bitmojiHeight/150*15));//nose
+
+
+fill(255,255,255);
+arc(bitmojiX+(bitmojiHeight/150*1),bitmojiY+(bitmojiHeight/150*31),bitmojiHeight/150*33,bitmojiHeight/150*17,1,179);//mouth
+
+strokeWeight(5);
+line(bitmojiX-(bitmojiHeight/150*18),bitmojiY+(bitmojiHeight/150*24),bitmojiX+(bitmojiHeight/150*20),bitmojiY+(bitmojiHeight/150*24));//beardline
+line(bitmojiX-(bitmojiHeight/150*18),bitmojiY+(bitmojiHeight/150*24),bitmojiX-(bitmojiHeight/150*18),bitmojiY+(bitmojiHeight/150*42));//beardline
+line(bitmojiX+(bitmojiHeight/150*22),bitmojiY+(bitmojiHeight/150*24),bitmojiX+(bitmojiHeight/150*21),bitmojiY+(bitmojiHeight/150*42));//beardline
+};
+
+var bitmojiBody= function (bitmojiX,bitmojiY,bitmojiHeight) {
+    noStroke();
+fill(176, 108, 73);//skintone for neck
+rect(bitmojiX-(bitmojiHeight/150*14),bitmojiY+(bitmojiHeight/150*43),bitmojiHeight/150*31,bitmojiHeight/150*24);//neck
+
+fill(0, 0, 0);
+arc(bitmojiX+(bitmojiHeight/150*1),bitmojiY+(bitmojiHeight/150*40),bitmojiHeight/150*41,bitmojiHeight/150*23,1,179);//beard
+
+
+rect(bitmojiX-(bitmojiHeight/150*44),bitmojiY+(bitmojiHeight/150*62),bitmojiHeight/150*90,bitmojiHeight/150*119);//body
+
+};
+
+var drawBitmoji= function(bitmojiX,bitmojiY,bitmojiHeight){
+    bitmojiHead(bitmojiX,bitmojiY,bitmojiHeight);
+    bitmojiFace(bitmojiX,bitmojiY,bitmojiHeight);
+    bitmojiBody(bitmojiX,bitmojiY,bitmojiHeight);
+}; //draw Jordans bitmoji
